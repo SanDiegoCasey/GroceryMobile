@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<title>Grocery Mobile Companion</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Grocery Price Comparison App to find the best prices on daily items." />
+	<meta name="google-site-verification" content="----------SEARCH CONSOLE GOES HERE------------" />
+
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" href="css/style.css" />
+
+	<link href="https://fonts.googleapis.com/css?family=Changa|Changa+One|Signika|Lato" rel="stylesheet">
+
+
+</head>
+
+<body>
+	<div class="CLW-container-main">
+		<header>
+			<div class="CLW-top">
+				<a href="index.html"><img src="images/grocery-mobile-logo-horz.png" alt="" class="mainlogo"></a>
+			</div>
+			<h1>Edit this product</h1>
+		</header>
+
+		<section class="add-a-product">
+			<div class="add-a-prod-container">
+				<form action="#">
+					<div class="add-a-prod-top">
+						<div class="productname">Chicken Breast</div>
+						<div class="block-select">
+							<label class="editlabel">Units</label>
+								<select name="unit">
+								<option value="each">each</option>
+								<option value="perlb">per lb</option>
+								<option value="peroz">per oz</option>
+								<option value="perliter">per liter</option>
+								<option value="perquart">per quart</option>
+								<option value="pergallon">per gallon</option>
+							</select>
+						</div>
+					</div>
+					<div class="add-a-prod-pricing" id="storeLogoEdit">
+						<h3>Pricing</h3>
+					</div>
+					<div class="submit-button">
+						<input type="submit">
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<section class="unit-converter">
+			<div class="converter-form">
+				<h2>Conversion Calculator</h2>
+				<form action="#">
+					<div class="form-group">
+						<label>Price $</label>
+						<input value="" class="input-control" id="price" />
+
+						<label class="right-inline-units">Qty</label>
+						<input value="" class="input-control" id="unitQty" />
+
+						<label class="right-inline" for="unittype">Unit type</label>
+						<select name="unit" id="conversion-selector">
+								<option value="oz">oz</option>
+								<option value="lbs">lbs</option>
+								<!-- <option value="KG">KG</option>
+								<option value="Grams">Grams</option>
+								<option value="Gallon">Gallon</option>
+								<option value="Quart">Quart</option>
+								<option value="Liter">Liter</option>
+								<option value="3pack">3 pack</option>
+								<option value="5pack">5 pack</option>
+								<option value="6pack">6 pack</option>
+								<option value="12pack">12 pack</option>
+								<option value="18pack">18 pack</option>
+								<option value="24pack">24 pack</option>
+								<option value="36pack">36 pack</option>
+								<option value="48pack">48 pack</option> -->
+							</select>
+					</div>
+
+					<div class="submit-calc">
+						<input type="submit" value="Calculate">
+					</div>
+				</form>
+				<div id="unit-result">
+
+				</div>
+
+		</section>
+
+		<section class="bottomnav">
+			<div class="CLW-bottom">
+				<div class="CLW-bar">
+					<div class="menubutton"><a href="about.html" class="CLW-button"><img src="images/icons/icon-house-white.png" alt="Home Icons"></a></div>
+					<div class="menubutton"><a href="list.html" class="CLW-button"><img src="images/icons/icon-list-white.png" alt="Home Icons"></a></div>
+					<div class="menubutton"><a href="product-add.html" class="CLW-button"><img src="images/icons/icon-apple-white.png" alt="Home Icons"></a></div>
+					<div class="menubutton"><a href="store-add.html" class="CLW-button"><img src="images/icons/icon-shop-white.png" alt="Home Icons"></a></div>
+				</div>
+			</div>
+		</section>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="js/libs/jquery-3.3.1.min.js">\x3C/script>')
+		</script>
+		<script src="js/script.js"></script>
+
+</body>
+
+</html>
