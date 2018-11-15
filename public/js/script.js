@@ -225,4 +225,16 @@ $(function() {
   //
   //
   //
+  function reverse(bool) {
+  	if(typeof bool !== 'boolean'){
+  		return "boolean expected"; }else{
+  			return !bool;
+  		}
+  	}
+
+  reverse(4);
+  reverse("bluff");
+  reverse(true);
+
+
 });

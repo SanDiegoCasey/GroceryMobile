@@ -12,37 +12,43 @@
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" href="css/style.css" />
 
-	<link href="https://fonts.googleapis.com/css?family=Changa|Changa+One|Signika" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Changa|Changa+One|Signika|Lato" rel="stylesheet">
 
 
 </head>
 
-<body class="bgimg">
-	<div style="height:100%" class="container-main">
+<body>
+	<div class="CLW-container-main">
 		<header>
-			<div class="frontlogo"><img src="images/logo_image-sig.png" alt="Grocery Companion Logo" class="logo"></div>
+			<div class="CLW-top">
+				<a href="index.html"><img src="images/grocery-mobile-logo-horz.png" alt="" class="mainlogo"></a>
+			</div>
+			<div class="CLW-title">My Grocery List</div>
 		</header>
 
-		<section role="" aria-labelledby="">
-			<div class="form-holder">
-				<div class="form-content">
-					<div class="form-items">
-						<div class="tagline">
-							<p>Keep your local prices for your favorite items at your fingertips.</p>
-						</div>
-						<h1 style="color:#333;">Login</h1>
-						<form id="loginForm">
-							<input class="form-control" type="text" name="username" placeholder="username" required>
-							<input class="form-control" type="password" name="password" placeholder="Password" required>
-							<div class="form-button">
-								<button id="submit" type="submit" class="ibtn">Login</button> <a class="login-link" href="register.html">Register</a> <a class="logout" href="#">LOGOUT</a><a class="protected" href="/api/protected/list.html">protected page</a>
-								<!-- <a href="forgot.html">Forgot password?</a> -->
-							</div>
-						</form>
-					</div>
+		<section role="list-form-row">
+			<div class="add-prod-form-submit">
+				<div class="addproductselect">
+					<form action="#">
+						<select name="Groceries" id="groceryList">
+						</select>
+						<input type="submit" value="✔">
+					</form>
 				</div>
+				<button class="addstore" onclick="location.href='product-add.html';">NEW+</button>
 			</div>
 		</section>
+
+		<section class="storerow">
+			<div id="storesInList">
+			</div>
+			<div class="storeEnd"></div>
+		</section>
+
+		<section class="results" id='productsInList'>
+		</section>
+
+
 		<div class="CLW-bottom">
 			<div class="CLW-bar">
 				<div class="menubutton"><a href="about.html" class="CLW-button"><img src="images/icons/icon-house-white.png" alt="Home Icons"></a></div>
@@ -51,6 +57,10 @@
 				<div class="menubutton"><a href="store-add.html" class="CLW-button"><img src="images/icons/icon-shop-white.png" alt="Home Icons"></a></div>
 			</div>
 		</div>
+		<section role="" aria-labelledby="">
+
+		</section>
+
 		<footer>
 		</footer>
 
@@ -61,8 +71,8 @@
 	<script>
 		window.jQuery || document.write('<script src="js/libs/jquery-3.3.1.min.js">\x3C/script>')
 	</script>
-	<script src="js/index.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/list.js"></script>
 
 </body>
 
