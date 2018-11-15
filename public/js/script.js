@@ -36,7 +36,7 @@ $(function() {
   //
   //   var $products = $('#productsInList');
   //   var $stores = $('#storesInList');
-  //   var $groceryList = $('#groceryList');
+
   //   var $addProducts = $('#storeLogoProductAdd');
   //   var $chooseStores = $('#currentStores');
   //   var $availableStores = $('#availableStores');
@@ -46,17 +46,7 @@ $(function() {
   //   var $addPrice2 = $('#addProductPrice2');
   //   var $addPrice3 = $('#addProductPrice3');
   //
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: '/storedproducts',
-  //     success: function(products) {
-  //       $.each(products, function(i, product) {
-  //         $groceryList.append(
-  //           `<option value="${product._id}">${product.name} ${product.size}</option>`
-  //         );
-  //       });
-  //     }
-  //   });
+
   //
   //
   //   $.ajax({
@@ -91,20 +81,7 @@ $(function() {
   //     }
   //   });
   //
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: '/liststores',
-  //     success: function(stores) {
-  //       $.each(stores, function(i, store) {
-  //         $stores.append(`<div class="storelogo">
-  //         				<img src="images/icons/grocery/icon-grocery-${store.name.replace(/\s+/g, '').toLowerCase()}.jpg" alt="${store.name} logo">
-  //         			</div>`);
-  //       });
-  //     },
-  //     error: function() {
-  //       // alert('error with this dealio1');
-  //     }
-  //   });
+
   //
   //   $.ajax({
   //     type: 'GET',

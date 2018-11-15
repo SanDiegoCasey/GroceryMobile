@@ -3,7 +3,7 @@
 $(function() {
 
   const registerUserSuccess = (user) => ({
-    type:'REGISTER_USER_SUCCESS',
+    type: 'REGISTER_USER_SUCCESS',
     user
   });
 
@@ -14,10 +14,15 @@ $(function() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({username, password})
+      body: JSON.stringify({
+        username,
+        password
+      })
     })
       .then(response => response.json())
+      .then(alert(`${username} has been added`))
       .catch(error => console.log(error));
+    window.location = 'index.html';
   };
 
   function handleSubmit(event) {

@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
@@ -12,10 +13,20 @@ mongoose.Promise = global.Promise;
 
 const { PORT, DATABASE_URL } = require('./config');
 
+const storeRoutes = require('./routes/stores');
+const productRoutes = require('./routes/products');
+
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Logging
 app.use(morgan('common'));
+
+app.use('/stores', storeRoutes);
+app.use('/products', productRoutes);
+
 
 // CORS
 app.use(function (req, res, next) {
@@ -27,6 +38,7 @@ app.use(function (req, res, next) {
   }
   next();
 });
+
 
 passport.use(localStrategy);
 passport.use(jwtStrategy);
