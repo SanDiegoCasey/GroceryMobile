@@ -4,16 +4,11 @@ const PriceSchema = mongoose.Schema({
   price: String
 });
 
-const LocationSchema = mongoose.Schema({
-  location: String
-});
-
 const ProductSchema = mongoose.Schema({
   name: String,
-  unit: String,
+  size: String,
   sort: String,
-  prices: [ PriceSchema ],
-  locations: [LocationSchema]
+  prices: [ PriceSchema ]
 });
 
 module.exports = mongoose.model('Product', ProductSchema, 'products');

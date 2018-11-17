@@ -16,8 +16,11 @@ $(function() {
     })
       .then(response => response.json())
       .then(json => {
-        const {authToken} = json;
+        const {authToken, userId} = json;
+        console.log(json);
+
         localStorage.setItem('token', authToken);
+        localStorage.setItem('userId', userId);
 
       })
       .catch(error => console.log(error));

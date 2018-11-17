@@ -37,6 +37,7 @@ router.post('/', jsonParser, (req, res) => {
   StoredProduct.create({
     name: req.body.name,
     size: req.body.size,
+    sort: req.body.sort,
     prices: req.body.prices
   }).then(item => {
     res.status(201).json(item);
