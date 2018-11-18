@@ -20,7 +20,8 @@ const productRoutes = require('./routes/products');
 
 const app = express();
 
-const product = require('./models/products')
+const product = require('./models/products');
+const store = require('./models/stores');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -85,7 +86,7 @@ app.put('/products/:id', jsonParser, (req, res) => {
 });
 
 app.put('/stores/:id', jsonParser, (req, res) => {
-  const requiredFields = ['name', 'sort', 'size', '_id'];
+  const requiredFields = ['sort', '_id'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -94,18 +95,25 @@ app.put('/stores/:id', jsonParser, (req, res) => {
       return res.status(400).send(message);
     }
   }
-  if (req.params.id !== req.body.id) {
-    const message = `Request path id (${req.params.id}) and request body id (${req.body.id}) must match`;
+  if (req.params.id !== req.body._id) {
+    const message = `Request path id (${req.params.id}) and request body id (${req.body._id}) must match`;
     console.error(message);
     return res.status(400).send(message);
   }
-  console.log(`Updating shopping list item \`${req.params.id}\``);
-  ShoppingList.update({
-    id: req.params.id,
-    name: req.body.name,
-    budget: req.body.budget
-  });
-  res.status(204).end();
+  console.log(`Updating store item \`${req.params.id}\``);
+  store
+    .findOneAndUpdate(
+      {_id: new ObjectId(req.params.id)},
+      {
+        sort: req.body.sort,
+      }
+    )
+    .then(store => {
+      res.status(200).json(store);
+    })
+    .catch(e => {
+      res.status(500).end()
+    });
 });
 
 const jwtAuth = passport.authenticate('jwt', { session: false });

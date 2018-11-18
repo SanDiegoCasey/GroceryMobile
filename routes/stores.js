@@ -8,7 +8,7 @@ mongoose.Promise = global.Promise;
 
 router.get('/', (req, res) => {
   Store
-    .find()
+    .find({userID: req.query.userId || ''})
     .then(stores => {
       res.json(stores);
     })
