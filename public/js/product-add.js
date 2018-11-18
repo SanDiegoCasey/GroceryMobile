@@ -3,6 +3,7 @@
 $(function() {
 
   var authTokenhas = localStorage.getItem('token');
+  var userId = localStorage.getItem('userId');
 
   if(!authTokenhas) {window.location="register.html"}
 
@@ -40,6 +41,7 @@ $(function() {
       sort: "list",
       name: $addProductName.val(),
       size: $addProductUnit.val(),
+      userID: userId,
       prices: [{
           price: $addPrice1.val()
         },
@@ -51,8 +53,6 @@ $(function() {
         }
       ]
     }
-
-    console.log(newProd);
 
     $.ajax({
       type: 'POST',

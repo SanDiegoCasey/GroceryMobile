@@ -8,6 +8,7 @@ const ProductSchema = mongoose.Schema({
   name: String,
   size: String,
   sort: String,
+  userID: String,
   prices: [ PriceSchema ]
 });
 

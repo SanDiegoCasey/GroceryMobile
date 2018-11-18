@@ -23,7 +23,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', jsonParser, (req, res) => {
-  const requiredFields = ['name', 'size', 'prices'];
+  const requiredFields = ['name', 'size', 'prices', 'userID'];
   console.log(`from router ${req.body}`);
   for (let i=0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
@@ -38,6 +38,7 @@ router.post('/', jsonParser, (req, res) => {
     name: req.body.name,
     size: req.body.size,
     sort: req.body.sort,
+    userID: req.body.userID,
     prices: req.body.prices
   }).then(item => {
     res.status(201).json(item);
