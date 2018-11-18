@@ -10,7 +10,7 @@ mongoose.Promise = global.Promise;
 
 router.get('/', (req, res, next) => {
   StoredProduct
-    .find()
+    .find({userID: req.query.userId || ''})
     .then(products => {
       res.status(200).json(products);
     })

@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
 const bodyParser = require('body-parser');
+const ObjectId = mongoose.Types.ObjectId;
 const jsonParser = bodyParser.json();
 
 const { router: usersRouter } = require('./users');
@@ -18,6 +19,8 @@ const storeRoutes = require('./routes/stores');
 const productRoutes = require('./routes/products');
 
 const app = express();
+
+const product = require('./models/products')
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -58,19 +61,27 @@ app.put('/products/:id', jsonParser, (req, res) => {
       return res.status(400).send(message);
     }
   }
-  if (req.params.id !== req.body.id) {
-    const message = `Request path id (${req.params.id}) and request body id (${req.body.id}) must match`;
+  if (req.params.id !== req.body._id) {
+    const message = `Request path id (${req.params.id}) and request body id (${req.body._id}) must match`;
     console.error(message);
     return res.status(400).send(message);
   }
   console.log(`Updating sitem \`${req.params.id}\``);
-  product.update({
-    id: req.params.id,
-    name: req.body.name,
-    sort: req.body.sort,
-    size: req.body.size
-  });
-  res.status(204).end();
+  product
+    .findOneAndUpdate(
+      {_id: new ObjectId(req.params.id)},
+      {
+        // name: req.body.name,
+        sort: req.body.sort,
+        // size: req.body.size
+      }
+    )
+    .then(product => {
+      res.status(200).json(product);
+    })
+    .catch(e => {
+      res.status(500).end()
+    });
 });
 
 app.put('/stores/:id', jsonParser, (req, res) => {

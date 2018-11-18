@@ -23,25 +23,32 @@ if(!authTokenhas) {window.location="register.html"}
 
   $('#addFromBank').on('click', function(e){
     e.preventDefault();
-    let activeProd = $('#groceryList').val();
-    console.log(activeProd);
-    let newProd =
+    let activeProd = $('#groceryList').val()
 
     $.ajax({
       type: 'PUT',
       url: '/products/' + activeProd,
-      data:JSON.stringify({
-        "sort":"list"}),
-        headers:{
-          'X-CSRF-TOKEN': localstorage.getItem()
-        }
-
+      data: JSON.stringify({
+        "sort": "list",
+        "_id": activeProd,
+      }),
+      contentType: 'application/json',
+      // headers:{
+      //   'X-CSRF-TOKEN': localstorage.getItem()
+      // },
+      success: function(product) {
+        $groceryList.find(`[value="${product._id}"]`).remove();
+        $products.append(resultProduct(product));
+      }
     })
   });
 
   $.ajax({
     type: 'GET',
     url: '/products',
+    data: {
+      userId: userId
+    },
     success: function(products) {
       $.each(products, function(i, product) {
         if (product.sort !== 'list') {
@@ -50,9 +57,7 @@ if(!authTokenhas) {window.location="register.html"}
           );
         }
       });
-
     }
-
   });
 
 
@@ -75,29 +80,13 @@ if(!authTokenhas) {window.location="register.html"}
   $.ajax({
     type: 'GET',
     url: '/products',
+    data: {
+      userId: userId
+    },
     success: function(products) {
       $.each(products, function(i, product) {
         if (product.sort === 'list') {
-          $products.append(`<div class="result-row">
-                						<div class="checkboxes">
-                							<div class="checkedoff">
-                								<form action="#" method="get">
-                									<input type="checkbox" id="deleterow" name="prodchecked">
-                								</form>
-                							</div>
-                							<div class="deleterow">
-                								<img src="images/icons/icon-delete.png" alt="">
-                							</div>
-                						</div>
-                						<div class="productdescription">
-                							<div class="productname">${product.name}</div>
-                							<div class="productsize">${product.size}</div>
-                						</div>
-                						<div class="price">$${product.prices[0].price}</div>
-                						<div class="price">$${product.prices[1].price}</div>
-                						<div class="price">$${product.prices[2].price}</div>
-                						<div class="storeEnd"><a href="product-edit.html"><img src="images/icons/icon-edit-pencil-clear.png" width="20px"></a></div>
-                					</div>`);
+          $products.append(resultProduct(product));
         }
       });
     },
@@ -105,13 +94,27 @@ if(!authTokenhas) {window.location="register.html"}
       // alert('error with this dealio');
     }
   });
-
-
-
-
-
-
-
-
-
 });
+
+function resultProduct(product) {
+  return `<div class="result-row">
+            <div class="checkboxes">
+              <div class="checkedoff">
+                <form action="#" method="get">
+                  <input type="checkbox" id="deleterow" name="prodchecked">
+                </form>
+              </div>
+              <div class="deleterow">
+                <img src="images/icons/icon-delete.png" alt="">
+              </div>
+            </div>
+            <div class="productdescription">
+              <div class="productname">${product.name}</div>
+              <div class="productsize">${product.size}</div>
+            </div>
+            <div class="price">$${product.prices[0].price}</div>
+            <div class="price">$${product.prices[1].price}</div>
+            <div class="price">$${product.prices[2].price}</div>
+            <div class="storeEnd"><a href="product-edit.html"><img src="images/icons/icon-edit-pencil-clear.png" width="20px"></a></div>
+          </div>`
+}
