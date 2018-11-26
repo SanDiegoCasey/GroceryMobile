@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema({
   stores: [storeSchema]
 });
 
-userSchema.methods.serializethis = function() {
+userSchema.methods.serialize = function() {
   return {
     username: this.username || '',
     products: this.products || [],

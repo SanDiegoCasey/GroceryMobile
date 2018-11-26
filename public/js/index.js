@@ -18,10 +18,12 @@ $(function() {
       .then(json => {
         console.log(json);
         const {authToken} = json;
+        const {userId} = json;
         localStorage.setItem('token', authToken);
-        localStorate.setItem('userId', userId);
-
+        localStorage.setItem('userId', userId);
+        window.location = '/store-add.html';
       })
+      // .then(window.location = '/store-add.html')
       .catch(error => console.log(error));
   };
 
