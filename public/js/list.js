@@ -135,7 +135,7 @@ $(function() {
 
   $(document).on('click', '#editproduct', function() { // checkbox
     let editable = $(this).attr('name');
-    localStorage.setItem('editProduct', JSON.stringify(editable));
+    localStorage.setItem('editProduct', editable);
     window.location = 'product-edit.html';
   });
 

@@ -90,9 +90,17 @@ ul {
   margin:auto;
 }
 
+#productsInList {
+  margin-bottom: 60px;
+}
+
 #storesInList{
   display:flex;
   justify-content: flex-end;
+}
+
+#editProdName{
+  margin-bottom: 15px;
 }
 
 .storelogo>img {

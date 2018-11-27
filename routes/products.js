@@ -38,6 +38,16 @@ router.get('/user/:id', (req, res, next) => {
     });
 });
 
+router.get('/:productID', (req, res, next) => {
+  StoredProduct
+    .findOne({
+      _id: req.params.productID
+    })
+    .then(product => {
+      res.status(201).json(product);
+    });
+});
+
 router.post('/user/:id', jsonParser, (req, res) => {
   const requiredFields = ['name', 'size', 'prices'];
   console.log(`from router ${req.body}`);
@@ -90,6 +100,33 @@ router.put('/remove/:id', (req,res,next) =>{
   StoredProduct
     .findOneAndUpdate({_id:req.params.id}, {$set:{sort:'list'}})
     .then(result =>{
+      res.status(200).json(result);
+
+    })
+    .catch(err=>{
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
+});
+
+router.put('/:id', (req,res) => {
+
+  let pricesArray = [];
+
+  for (let i = 0; i < req.body.prices.length; i++){
+    pricesArray.push(req.body.prices[i]);
+  }
+
+  let storeProduct = {
+    size: req.body.size,
+    prices: pricesArray
+  };
+
+  StoredProduct
+    .findOneAndUpdate({_id:req.params.id}, {$set:storeProduct})
+    .then(result => {
       res.status(200).json(result);
 
     })
