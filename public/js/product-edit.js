@@ -24,7 +24,18 @@ $(function() {
   var $addPrice3 = $('#addProductPrice3');
 
 
-
+  $.ajax({
+    type: 'GET',
+    url: '/stores/user/' + userId,
+    success: function(stores) {
+      $.each(stores, function(i, store) {
+        if (store.sort === 'list') {
+          $addProducts.append(`<span class="storeProductLogo"><img src="images/icons/grocery/icon-grocery-${store.name.replace(/\s+/g, '').toLowerCase()}.jpg" alt="${store.name} logo"></span>
+            `);
+        }
+      });
+    }
+  });
 
   $.ajax({
     type: 'GET',

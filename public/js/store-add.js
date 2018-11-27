@@ -20,7 +20,9 @@ $(function() {
     url: '/stores/user/'+userId,
     success: function(stores) {
       let listStores = stores.filter( store => store.sort == 'list');
+      let userStores = stores;
       localStorage.setItem('storeCount', listStores.length);
+      localStorage.setItem('activeStores', JSON.stringify(userStores));
       $.each(stores, function(i, store) {
         if (store.sort == 'list'){
           $chooseStores.append(`<div class="fav-store" >
@@ -102,7 +104,7 @@ $(function() {
   });
 
   $(document).on('click', '#previousStores', function(){ // previousStores
-    let id = this.name;
+    let id = $(this).attr('name');
     let listStores = localStorage.getItem('storeCount');
     console.log('testing here');
     console.log(listStores);
@@ -120,6 +122,7 @@ $(function() {
   });
 
   $(document).on('click', '#availableStr', function(e){ // this is the ADD FROM BANK
+    let userStores = localStorage.getItem('activeStores');
     e.preventDefault();
     var newStore = {
       name: this.name,
@@ -127,21 +130,24 @@ $(function() {
       userID: userId,
     };
     let listStores = localStorage.getItem('storeCount');
-    console.log('testing here');
-    console.log(listStores);
-    if(listStores >= 3){
-      alert('You already have too many stores');
+    if(userStores.includes(this.name)){
+      alert(`${this.name} already exists!`);
     } else {
-      $.ajax({
-        type: 'POST',
-        url: '/stores/user/' + userId,
-        data: newStore,
-        success: function(newStore) {
-          alert(`${newStore.name} Added!`);
-          console.log(newStore);
-          location.reload();
-        }
-      });
+      if(listStores >= 3){
+        alert('You already have too many stores');
+      } else {
+        $.ajax({
+          type: 'POST',
+          url: '/stores/user/' + userId,
+          data: newStore,
+          success: function(newStore) {
+            alert(`${newStore.name} Added!`);
+            console.log(newStore);
+            location.reload();
+          }
+        });
+      }
+
     }
   });
 });

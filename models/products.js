@@ -12,4 +12,4 @@ const ProductSchema = mongoose.Schema({
   userID: String
 });
 
-module.exports = mongoose.model('Product', ProductSchema, 'products');
+module.exports = mongoose.model('StoredProduct', ProductSchema, 'products');

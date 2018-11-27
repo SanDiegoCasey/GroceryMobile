@@ -30,7 +30,7 @@
 			<div class="add-a-prod-container">
 				<form action="#">
 					<div class="add-a-prod-top">
-						<div class="productname">Chicken Breast</div>
+						<div class="productname" id="editProdName"></div>
 						<div class="block-select">
 							<label class="editlabel">Units</label>
 								<select name="unit">
@@ -43,8 +43,21 @@
 							</select>
 						</div>
 					</div>
-					<div class="add-a-prod-pricing" id="storeLogoEdit">
-						<h3>Pricing</h3>
+					<h3>Price</h3>
+					<div class="add-a-prod-pricing">
+						<div class="storeProductLogos" id="storeLogoProductAdd">
+						</div>
+						<div class="storeAddPrices">
+							<div class="block-input-price">
+								<span class="currencyinput">$<input class="price-label" type="text" id="addProductPrice1"></span>
+							</div>
+							<div class="block-input-price">
+								<span class="currencyinput">$<input class="price-label" type="text" id="addProductPrice2"></span>
+							</div>
+							<div class="block-input-price">
+								<span class="currencyinput">$<input class="price-label" type="text" id="addProductPrice3"></span>
+							</div>
+						</div>
 					</div>
 					<div class="submit-button">
 						<input type="submit">
@@ -111,6 +124,7 @@
 		<script>
 			window.jQuery || document.write('<script src="js/libs/jquery-3.3.1.min.js">\x3C/script>')
 		</script>
+		<script src="js/product-edit.js"></script>
 		<script src="js/script.js"></script>
 
 </body>

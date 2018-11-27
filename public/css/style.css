@@ -95,8 +95,6 @@ ul {
   justify-content: flex-end;
 }
 
-
-
 .storelogo>img {
   margin-left: 1px;
   border: 2px solid #e3e3e3;
@@ -246,9 +244,15 @@ ul {
   margin-right:5px;
 }
 
-input[type=checkbox]#deleterow:checked ~ div.deleterow {
+/* input[type=checkbox]#deleterow:checked ~ div.deleterow {
   display:block;
-  }
+  background-color: #ed308f;
+  } */
+
+.checked{
+	color:#999 !important;
+  text-decoration: line-through;
+}
 
 .add-prod-form-submit {
   width:98%;
@@ -362,22 +366,39 @@ section.add-a-product {
   height:60px;
   margin-bottom:7px;
   width:100%;
+  padding-left: 5px;
 }
 
 .block-input-price input[type=text] {
+  display: inline-block;
     padding: 10px 10px;
-    width:100%;
-    height:62px;
-    border: 1px solid #ccc;
+    height:60px;
     border-radius: 4px;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     color:red;
-    font-size: 2em;
-    text-align: right;
+    font-size: 1.5em;
+    text-align: left;
     font-weight: bold;
     vertical-align: middle;
+    width:85%;
+}
 
+.currencyinput {
+  padding-left: 5px;
+    border: 1px inset #ccc;
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    color:red;
+    font-size: 2em;
+    text-align: left;
+    font-weight: bold;
+    vertical-align: middle;
+    background-color: #fff;
+    width:100%;
+}
+.currencyinput input {
+    border: 0;
 }
 
 .add-a-prod-container {
