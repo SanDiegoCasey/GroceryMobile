@@ -4,6 +4,7 @@ $(function() {
 
   var authTokenhas = localStorage.getItem('token');
   var userId = localStorage.getItem('userId');
+  
 
   if(!authTokenhas) {window.location='register.html';}
 

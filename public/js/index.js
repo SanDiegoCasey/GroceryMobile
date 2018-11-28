@@ -21,6 +21,7 @@ $(function() {
         const {userId} = json;
         localStorage.setItem('token', authToken);
         localStorage.setItem('userId', userId);
+        localStorage.setItem('userName', username);
         window.location = '/store-add.html';
       })
       // .then(window.location = '/store-add.html')
@@ -34,16 +35,23 @@ $(function() {
     loginUser(username, password);
   }
 
-  function handleLogout(){
-    localStorage.removeItem('token');
-    window.location = 'index.html';
+  // function handleLogout(){
+  //   localStorage.removeItem('token');
+  //   window.location = 'index.html';
+  // }
+  //
+  //
+  // $('.logout').on('click', function(event) {
+  //   event.preventDefault();
+  //   handleLogout(event);
+  // });
+
+  var authTokenhas = localStorage.getItem('token');
+  var userName = localStorage.getItem('userName');
+
+  if(authTokenhas) {
+    $('#personalizeindex').html(`<span class="loginstatusindex">Hi ${userName}! <a href="#" class="logout">logout</a></span>`);
   }
-
-
-  $('.logout').on('click', function(event) {
-    event.preventDefault();
-    handleLogout(event);
-  });
 
   $('#loginForm').on('submit', function(event) {
     event.preventDefault();

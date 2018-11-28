@@ -423,6 +423,14 @@ section.add-a-product {
   text-align: right;
 }
 
+.loginstatus {
+  color:#006600;
+}
+
+.loginstatusindex {
+  color:#fff;
+}
+
 .submit-calc input[type=submit] {
   width:25%;
   background-color: #006600;
@@ -472,6 +480,23 @@ section.add-a-product {
 #unit-result {
   font-size: 1em;
   margin: 5px;
+}
+
+#personalize {
+  font-size: 1em;
+  text-align: right;
+  margin-right: 10px;
+}
+
+#personalizeindex {
+  font-size: 1em;
+  text-align: right;
+  margin-right: 10px;
+  margin-top:5px;
+}
+
+a.logout {
+  color:#fff;
 }
 
 .computed-price {
@@ -592,7 +617,7 @@ section.unit-converter {
 
 .bgimg {background-image: url("../images/photos/bg-bag.jpg")}
 /* .bgimg {background-image: url("../images/photos/bg-index.jpg")} */
-.bgimg2 {background-image: url("../images/photos/bg-groceries.jpg")}
+.bgimg2 {background-image: url("../images/photos/bg-register2.jpg")}
 
 .logo {
   -webkit-filter: drop-shadow(3px 3px 3px #494848);
@@ -684,7 +709,7 @@ section.unit-converter {
     border-radius: 6px;
     border: 0;
     padding: 6px 28px;
-    background-color: #920000;
+    background-color: #006600;
     color: #fff;
     font-size: 14px;
     font-weight: 700;
@@ -703,4 +728,12 @@ section.unit-converter {
     /* font-weight: 600; */
     color: #920000;
     text-decoration: underline;
+}
+
+.login-link {
+  color:#fff !important;
+}
+
+.register-link {
+  color:#920000 !important;
 }
