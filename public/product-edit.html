@@ -10,8 +10,9 @@
 	<meta name="google-site-verification" content="----------SEARCH CONSOLE GOES HERE------------" />
 
 	<link rel="shortcut icon" href="favicon.ico" />
-	<link rel="stylesheet" href="css/style.css" />
-
+	<link rel="stylesheet" href="css/global/global.css" />
+	<link rel="stylesheet" href="css/pages/product-edit.css" />
+	<link rel="stylesheet" href="css/modules/navigation.css" />
 	<link href="https://fonts.googleapis.com/css?family=Changa|Changa+One|Signika|Lato" rel="stylesheet">
 
 
@@ -34,7 +35,7 @@
 						<div class="productname" id="editProdName"></div>
 						<div class="block-select">
 							<label class="editlabel">Units</label>
-								<select name="unit" id="selectedUnit">
+							<select name="unit" id="selectedUnit">
 								<option value="each">each</option>
 								<option value="per lb">per lb</option>
 								<option value="per oz">per oz</option>
@@ -80,22 +81,12 @@
 
 						<label class="right-inline" for="unittype">Unit type</label>
 						<select name="unit" id="conversion-selector">
-								<option value="oz">oz</option>
-								<option value="lbs">lbs</option>
-								<!-- <option value="KG">KG</option>
-								<option value="Grams">Grams</option>
-								<option value="Gallon">Gallon</option>
-								<option value="Quart">Quart</option>
-								<option value="Liter">Liter</option>
-								<option value="3pack">3 pack</option>
-								<option value="5pack">5 pack</option>
-								<option value="6pack">6 pack</option>
-								<option value="12pack">12 pack</option>
-								<option value="18pack">18 pack</option>
-								<option value="24pack">24 pack</option>
-								<option value="36pack">36 pack</option>
-								<option value="48pack">48 pack</option> -->
-							</select>
+							<option value="each">per each</option>
+							<option value="per lb">per lb</option>
+							<option value="per oz">per oz</option>
+							<option value="per liter">per Liter</option>
+							<option value="per gallon">per Gallon</option>
+						</select>
 					</div>
 
 					<div class="submit-calc">
@@ -105,10 +96,11 @@
 				<div id="unit-result">
 
 				</div>
+			</div>
 
 		</section>
 
-		<section class="bottomnav">
+		<footer>
 			<div class="CLW-bottom">
 				<div class="CLW-bar">
 					<div class="menubutton"><a href="index.html" class="CLW-button"><img src="images/icons/icon-house-white.png" alt="Home Icons"></a></div>
@@ -118,17 +110,17 @@
 					<div class="menubutton"><a href="about.html" class="CLW-button"><img src="images/icons/icon-question-white.png" alt="Home Icons"></a></div>
 				</div>
 			</div>
-		</section>
-		</div>
+		</footer>
+	</div>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/libs/jquery-3.3.1.min.js">\x3C/script>')
-		</script>
-		<script src="js/product-edit.js"></script>
-		<script src="js/script.js"></script>
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/libs/jquery-3.3.1.min.js">\x3C/script>')
+	</script>
+	<script src="js/product-edit.js"></script>
+	<script src="js/script.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 

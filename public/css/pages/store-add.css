@@ -1,0 +1,41 @@
+.current-stores-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.fav-store {
+  text-align: center;
+  margin: 5px;
+  max-width: 60px;
+}
+
+.fav-store-name {
+  font-size: .65em;
+  font-weight: normal;
+  color: #666;
+  margin: -2px 0px 0px 0px;
+}
+
+.fav-store-add {
+  font-size: .8em;
+  font-weight: normal;
+  color: #666;
+  margin: -5px 0px 0px 0px;
+}
+
+.available-stores-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 5px 5px 60px 5px;
+}
+
+.smallButton {
+  background-color: #006600;
+  color: white;
+  padding: 2px 8px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+}

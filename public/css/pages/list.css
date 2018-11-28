@@ -1,0 +1,113 @@
+.storerow {
+  display: flex;
+  width: 98%;
+  margin: auto;
+  justify-content: flex-end;
+}
+
+#productsInList {
+  margin-bottom: 60px;
+}
+
+#storesInList {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.storelogo>img {
+  margin-left: 1px;
+  border: 2px solid #e3e3e3;
+}
+
+.price {
+  width: 60px;
+  margin: 1px 3px 1px 2px;
+  padding: 3px;
+  color: red;
+  border-left: 2px solid #e3e3e3;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.storeEnd {
+  width: 20px;
+}
+
+.productdescription {
+  color: #6e6e6e;
+  flex: 1 1;
+}
+
+.result-row {
+  width: 98%;
+  margin: auto;
+  display: flex;
+  background-color: #fff;
+  -webkit-filter: drop-shadow(2px 2px 2px #c7c7c7);
+  filter: drop-shadow(2px 2px 2px #c7c7c7);
+  margin-bottom: 5px;
+}
+
+.deleterow {
+  display: none;
+}
+
+.productsize {
+  margin-right: 5px;
+  margin-bottom: 2px;
+  text-align: right;
+  font-size: .8em;
+  font-weight: 400;
+}
+
+.productname {
+  margin-right: 5px;
+  color: #006600;
+  text-align: right;
+  font-family: 'Lato',
+                 sans-serif;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.checked {
+  color: #999 !important;
+  text-decoration: line-through;
+}
+
+.add-prod-form-submit {
+  display: flex;
+  width: 98%;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.addproductselect {
+  width: 100%;
+  text-align: right;
+}
+
+.add-prod-form-submit select {
+  box-sizing: border-box;
+  width: 80%;
+  padding: 10px 10px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  vertical-align: middle;
+  font-family: 'Lato',
+                   sans-serif;
+}
+
+.add-prod-form-submit input[type=submit] {
+  height: 40px;
+  margin: 0px 2px 0px 0px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  background-color: #006600;
+  vertical-align: middle;
+  font-family: 'Lato',
+                     sans-serif;
+  font-size: 1.2em;
+}

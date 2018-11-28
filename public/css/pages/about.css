@@ -1,0 +1,17 @@
+.aboutpage {
+  margin-left: 50px;
+}
+
+.maindescription {
+  margin-bottom: 60px;
+}
+
+.instructions-button {
+  background-color: #006600;
+  display: inline-block;
+}
+
+.instructions-button img {
+  height: 24px;
+  margin: 1px 2px 0px 2px;
+}

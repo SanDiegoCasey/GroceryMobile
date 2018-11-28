@@ -1,0 +1,205 @@
+.storeProductLogos {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.storeProductLogo img {
+  border: 1px solid #ccc;
+}
+
+.storeAddPrices {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+section.add-a-product {
+  display: flex;
+  justify-content: center;
+}
+
+.editlabel {
+  display: inline-block;
+  text-align: right;
+  margin-right: 5px;
+}
+
+.add-a-prod-top {
+}
+
+.block-name {
+  margin: 0px 0px 20px 0px;
+}
+
+.block-select {
+  margin: 0px 0px 20px 0px;
+  text-align: right;
+}
+
+.block-name input[type=text] {
+  padding: 10px 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  vertical-align: middle;
+}
+
+.block-select select {
+  padding: 10px 10px;
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  vertical-align: middle;
+}
+
+.add-a-prod-pricing {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.block-input-price {
+  display: inline;
+  height: 60px;
+  margin-bottom: 7px;
+  width: 100%;
+  padding-left: 5px;
+}
+
+.block-input-price input[type=text] {
+  display: inline-block;
+  padding: 10px 10px;
+  height: 60px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  color: red;
+  font-size: 1.5em;
+  text-align: left;
+  font-weight: bold;
+  vertical-align: middle;
+  width: 85%;
+}
+
+.currencyinput {
+  padding-left: 5px;
+  border: 1px inset #ccc;
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  color: red;
+  font-size: 2em;
+  text-align: left;
+  font-weight: bold;
+  vertical-align: middle;
+  background-color: #fff;
+  width: 100%;
+}
+
+.currencyinput input {
+  border: 0;
+}
+
+.add-a-prod-container {
+  width: 96%;
+}
+
+.submit-button {
+  width: 100%;
+  text-align: right;
+}
+
+.submit-calc {
+  width: 100%;
+  text-align: right;
+}
+
+.submit-calc input[type=submit] {
+  width: 25%;
+  background-color: #006600;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+}
+
+.submit-button button {
+  width: 25%;
+  background-color: #006600;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+#unit-result {
+  font-size: 1em;
+  margin: 5px;
+}
+
+.computed-price {
+  font-size: 2em;
+  color: #006600;
+  font-weight: bold;
+}
+
+section.unit-converter {
+  margin-bottom: 60px;
+}
+
+.converter-form {
+  width: 96%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  flex: none;
+  display: block;
+  font-size: .8em;
+  margin-right: 3px;
+  vertical-align: middle;
+  line-height: 1;
+  font-size: 1.2em;
+}
+
+.form-group label.right-inline {
+  text-align: right;
+  width: auto;
+  vertical-align: middle;
+}
+
+.form-group label.right-inline-units {
+  text-align: right;
+  vertical-align: middle;
+}
+
+.form-group select {
+  text-align: right;
+  vertical-align: middle;
+}
+
+.form-group .input-control {
+  display: block;
+  margin-right: 5px;
+  width: 18%;
+  vertical-align: middle;
+}

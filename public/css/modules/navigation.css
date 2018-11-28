@@ -1,0 +1,52 @@
+/*=============Top Bar ================*/
+
+.CLW-top {
+  width: 100%;
+  text-align: left;
+  background-color: #006600;
+}
+
+.loginstatus {
+  color: #006600;
+}
+
+#personalize {
+  font-size: 1em;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.mainlogo {
+  max-width: 463px;
+  height: 50px;
+  padding: 5px 10px;
+}
+
+/*=============Bottom Nav ================*/
+
+.CLW-bottom {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  bottom: 0;
+  background-color: #006600;
+}
+
+.CLW-bar a img {
+  height: 32px;
+  -webkit-filter: drop-shadow(2px 2px 2px #2d2727);
+  filter: drop-shadow(2px 2px 2px #2d2727);
+}
+
+.CLW-bar {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+
+.CLW-button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
