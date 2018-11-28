@@ -55,7 +55,7 @@ h3 {
   font-family: 'Lato', sans-serif;
   font-weight:800;
   font-size: 1.1em;
-  margin:10px 0px 10px 0px;
+  margin:10px 0px 10px 25px;
   color:#920000;
 }
 
@@ -71,6 +71,10 @@ ul {
 
 .maindescription {
   margin-bottom:60px;
+}
+
+.aboutpage {
+  margin-left: 50px;
 }
 
 /*  ------------ MENU BAR ROW ---------------------*/
