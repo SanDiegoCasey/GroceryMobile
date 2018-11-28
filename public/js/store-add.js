@@ -4,7 +4,7 @@ $(function() {
 
   var authTokenhas = localStorage.getItem('token');
   var userId = localStorage.getItem('userId');
-  
+
 
   if(!authTokenhas) {window.location='register.html';}
 
@@ -110,7 +110,7 @@ $(function() {
     console.log('testing here');
     console.log(listStores);
     if(listStores >= 3){
-      alert('You already have too many stores');
+      swal('Sorry, only 3 stores at a time, try removing one.');
     } else {
       $.ajax({
         url: '/stores/add/'+id,
@@ -132,17 +132,17 @@ $(function() {
     };
     let listStores = localStorage.getItem('storeCount');
     if(userStores.includes(this.name)){
-      alert(`${this.name} already exists!`);
+      swal(`${this.name} already exists!`);
     } else {
       if(listStores >= 3){
-        alert('You already have too many stores');
+        swal('You already have 3 stores, try removing one.');
       } else {
         $.ajax({
           type: 'POST',
           url: '/stores/user/' + userId,
           data: newStore,
           success: function(newStore) {
-            alert(`${newStore.name} Added!`);
+            // setTimeout(function(){swal(`${newStore.name} Added!`);},3000);
             console.log(newStore);
             location.reload();
           }

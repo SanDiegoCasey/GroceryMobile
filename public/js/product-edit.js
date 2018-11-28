@@ -75,8 +75,8 @@ $(function() {
       url: '/products/' + productID,
       data: newProd,
       success: function(newProd) {
-        alert(`${newProd.name} Updated!`);
-        console.log(newProd );
+        // alert(`${newProd.name} Updated!`);
+        // console.log(newProd );
         window.location = 'list.html';
         //   $('#addProductName').reset();
         //   $('#addProductPrice1').reset();

@@ -69,6 +69,10 @@ ul {
   list-style-type: none;
 }
 
+.maindescription {
+  margin-bottom:60px;
+}
+
 /*  ------------ MENU BAR ROW ---------------------*/
 
 .CLW-container-main {
@@ -215,7 +219,7 @@ ul {
   display:flex;
   flex-wrap:wrap;
   justify-content: flex-start;
-  margin:5px;
+  margin:5px 5px 60px 5px;
 }
 
 
@@ -495,7 +499,7 @@ section.add-a-product {
   margin-top:5px;
 }
 
-a.logout {
+a.logoutindex {
   color:#fff;
 }
 

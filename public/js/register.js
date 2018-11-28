@@ -20,7 +20,7 @@ $(function() {
       })
     })
       .then(response => response.json())
-      .then(alert(`${username} has been added`))
+      .then(swal(`${username} has been added`))
       .catch(error => console.log(error));
     window.location = 'index.html';
   };

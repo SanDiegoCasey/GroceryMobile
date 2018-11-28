@@ -47,55 +47,18 @@ $(function() {
     type: 'GET',
     url: '/stores/user/' + userId,
     success: function(stores) {
-    // if (stores.sort === 'list') {
-      $.each(stores, function(i, store) {
-        if (store.sort === 'list') {
-          $stores.append(`<div class="storelogo">
+      if(stores.length < 1){swal('You\'re new here! You need to add some stores!');setTimeout(function(){window.location = 'store-add.html';},3000);} else if (stores.length === 1){swal('ya only got one store');} else {
+        $.each(stores, function(i, store) {
+          if (store.sort === 'list') {
+            $stores.append(`<div class="storelogo">
           				<img src="images/icons/grocery/icon-grocery-${store.name.replace(/\s+/g, '').toLowerCase()}.jpg" alt="${store.name} logo">
           			</div>`);
-        }
-      });
-    // }
+          }
+        });
+      }
     }
   });
 
-  // $.ajax({
-  //   type: 'GET',
-  //   url: '/products',
-  //   success: function(products) {
-  //     $.each(products, function(i, product) {
-  //       if (product.sort === 'list') {
-  //         $products.append(`<div class="result-row">
-  //               						<div class="checkboxes">
-  //               							<div class="checkedoff">
-  //               								<form action="#" method="get">
-  //               									<input type="checkbox" id="deleterow" name="prodchecked">
-  //               								</form>
-  //               							</div>
-  //               							<div class="deleterow">
-  //               								<img src="images/icons/icon-delete.png" alt="">
-  //               							</div>
-  //               						</div>
-  //               						<div class="productdescription">
-  //               							<div class="productname">${product.name}</div>
-  //               							<div class="productsize">${product.size}</div>
-  //               						</div>
-  //               						<div class="price">$${product.prices[0].price}</div>
-  //               						<div class="price">$${product.prices[1].price}</div>
-  //               						<div class="price">$${product.prices[2].price}</div>
-  //               						<div class="storeEnd"><a href="product-edit.html"><img src="images/icons/icon-edit-pencil-clear.png" width="20px"></a></div>
-  //               					</div>`);
-  //       }
-  //     });
-  //   },
-  //   error: function() {
-  //     // alert('error with this dealio');
-  //   }
-  // });
-
-
-
-  ////////////////////////////////////////////////////
   $.ajax({
     type: 'GET',
     url: '/products/user/' + userId,
@@ -129,7 +92,6 @@ $(function() {
       });
     },
     error: function() {
-    // alert('error with this dealio');
     }
   });
 

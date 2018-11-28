@@ -22,10 +22,13 @@ $(function() {
         localStorage.setItem('token', authToken);
         localStorage.setItem('userId', userId);
         localStorage.setItem('userName', username);
-        window.location = '/store-add.html';
+        window.location = '/list.html';
       })
       // .then(window.location = '/store-add.html')
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        swal('Uh oh, that didn\'t work?');
+      });
   };
 
   function handleSubmit(event) {
@@ -50,7 +53,7 @@ $(function() {
   var userName = localStorage.getItem('userName');
 
   if(authTokenhas) {
-    $('#personalizeindex').html(`<span class="loginstatusindex">Hi ${userName}! <a href="#" class="logout">logout</a></span>`);
+    $('#personalizeindex').html(`<span class="loginstatusindex">Hi ${userName}! <a href="#" class="logoutindex">logout</a></span>`);
   }
 
   $('#loginForm').on('submit', function(event) {

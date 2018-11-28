@@ -65,8 +65,9 @@ $(function() {
       url: '/products/user/' + userId,
       data: newProd,
       success: function(newProd) {
-        alert(`${newProd.name} Added!`);
+        // swal(`${newProd.name} Added!`);
         console.log(newProd );
+        // setTimeout(function(){window.location = 'list.html';},1500);
         window.location = 'list.html';
         //   $('#addProductName').reset();
         //   $('#addProductPrice1').reset();

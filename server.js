@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+// import swal from 'sweetalert';
 
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
