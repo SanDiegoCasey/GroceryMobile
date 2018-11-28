@@ -62,4 +62,9 @@ $(function() {
     handleLogout(event);
   });
 
+  $('.logoutindex').on('click', function(event) {
+    event.preventDefault();
+    handleLogout(event);
+  });
+
 });

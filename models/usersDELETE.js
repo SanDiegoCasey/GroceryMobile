@@ -3,11 +3,15 @@ const mongoose = require('mongoose');
 const userSchema = mongoose.Schema({
   username: String,
   password: String,
+  products: [productSchema],
+  stores: [storeSchema]
 });
 
 userSchema.methods.serialize = function() {
   return {
     username: this.username || '',
+    products: this.products || [],
+    stores: this.stores || []
   };
 };
 

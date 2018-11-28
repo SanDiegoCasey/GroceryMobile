@@ -3,7 +3,6 @@
 $(function() {
 
   const loginUser = (username, password) => {
-    console.log(`login user working ${username} and ${password}`);
     fetch('/api/auth/login', {
       method: 'POST',
       headers: {
@@ -16,7 +15,6 @@ $(function() {
     })
       .then(response => response.json())
       .then(json => {
-        console.log(json);
         const {authToken} = json;
         const {userId} = json;
         localStorage.setItem('token', authToken);
