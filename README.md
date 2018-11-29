@@ -27,16 +27,24 @@ Adding / Editing Products
 
     To edit an existing product, you can always click the green pencil edit button to the right of any item on your list.
 
-    From the "Add Product" or "Edit Product" pages, choose the type of unit you will measure the item in, and enter in the prices for that item at one or all of your favorite stores. If you are comparing different products with different measurements you can use the easy conversion calculator at the bottom.
+    From the "Add Product" or "Edit Product" pages, choose the type of unit you will measure the item in, and enter in the 
+    prices for that item at one or all of your favorite stores. If you are comparing different products with different 
+    measurements you can use the easy conversion calculator at the bottom.
 
 Your List
     Once you have a few stores, and some products, you can proceed to your list.
 
-    Your list is where Grocery Mobile will usually take you when you first login. You can always add new products right from your list page by clicking the "NEW" button. You can also add previously used items from the drop down list using the green checkmark. Additionally, you can always add new products by clicking the green "APPLE" icon at the bottom of the screen.
+    Your list is where Grocery Mobile will usually take you when you first login. You can always add new products right 
+    from your list page by clicking the "NEW" button. You can also add previously used items from the drop down list using 
+    the green add button. Additionally, you can always add new products by clicking the green "APPLE" icon at the bottom 
+    of the screen.
 
-    Once you have a few items in your grocery list and you're at the grocery store you will be able to check items off of your list with the checkbox. Once an item is checked off you can also delete it from your list which will put it into your drop down to use for another time.
+    Once you have a few items in your grocery list and you're at the grocery store you will be able to check items off 
+    of your list with the checkbox. Once an item is checked off you can also delete it from your list which will put it 
+    into your drop down to use for another time.
 
-    Anytime you need to update the prices for a product, simply click the "Green Pencil Button" and you will be able to edit the product's price and also the unit used to measure it.
+    Anytime you need to update the prices for a product, simply click the "Green Pencil Button" and you will be able to 
+    edit the product's price and also the unit used to measure it.
 
 ## Built With
 
