@@ -29,6 +29,11 @@ a {
   font-size: .8em;
 }
 
+:focus {
+  background: #920000 !important;
+  color: #fff !important;
+}
+
 h1 {
   font-family: 'Lato', sans-serif;
   font-weight: 800;
@@ -76,4 +81,8 @@ button {
   border: none;
   border-radius: 4px;
   font-family: 'Lato', sans-serif;
+}
+
+button:focus {
+  background-color: #920000 !important;
 }

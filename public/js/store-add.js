@@ -28,7 +28,7 @@ $(function() {
         if (store.sort == 'list'){
           $chooseStores.append(`<div class="fav-store" >
             <div class="fav-store-img">
-              <img src="images/icons/grocery/icon-grocery-${store.name.replace(/\s+/g, '').toLowerCase()}.jpg" alt="">
+              <img src="images/icons/grocery/icon-grocery-${store.name.replace(/\s+/g, '').toLowerCase()}.jpg" alt="${store.name} logo">
             </div>
             <div class="fav-store-name">
               <span class="storeSpan">${store.name}</span>

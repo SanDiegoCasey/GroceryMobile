@@ -85,7 +85,7 @@ $(function() {
                 <div class="price">$${product.prices[0].price}</div>
                 <div class="price">$${product.prices[1].price}</div>
                 <div class="price">$${product.prices[2].price}</div>
-                <div class="storeEnd"><img src="images/icons/icon-edit-pencil-clear.png" name="${product._id}" id="editproduct" width="20px"/>
+                <div class="storeEnd"><a href="#"><img src="images/icons/icon-edit-pencil-clear.png" name="${product._id}" id="editproduct" width="20px"/></a>
                 </div>
             </div>`);
         }

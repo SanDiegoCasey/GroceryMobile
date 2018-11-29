@@ -20,13 +20,13 @@
 
 <body class="bgimg">
 	<div style="height:100%" class="container-main">
-		<header>
+		<header role="banner">
 			<div id="personalizeindex"></div>
 
 			<div class="frontlogo"><img src="images/logo_image-sig.png" alt="Grocery Companion Logo" class="logo"></div>
 		</header>
 
-		<section role="" aria-labelledby="">
+		<section role="main">
 			<div class="form-holder">
 				<div class="form-content">
 					<div class="form-items">
@@ -37,8 +37,8 @@
 
 						<h1 style="color:#333;">Login</h1>
 						<form id="loginForm">
-							<input class="form-control" type="text" name="username" placeholder="username" required>
-							<input class="form-control" type="password" name="password" placeholder="Password" required>
+							<input class="form-control" type="text" name="username" placeholder="username" required aria-label="username">
+							<input class="form-control" type="password" name="password" placeholder="Password" required aria-label="password">
 							<div class="form-button">
 								<button id="submit" type="submit" class="ibtn">Login</button> <a class="register-link" href="register.html">Register</a>
 							</div>
@@ -48,14 +48,14 @@
 			</div>
 		</section>
 
-		<footer>
+		<footer role="navigation">
 			<div class="CLW-bottom">
 				<div class="CLW-bar">
-					<div class="menubutton"><a href="index.html" class="CLW-button"><img src="images/icons/icon-house-white.png" alt="Home Icons"></a></div>
-					<div class="menubutton"><a href="list.html" class="CLW-button"><img src="images/icons/icon-list-white.png" alt="Home Icons"></a></div>
-					<div class="menubutton"><a href="product-add.html" class="CLW-button"><img src="images/icons/icon-apple-white.png" alt="Home Icons"></a></div>
-					<div class="menubutton"><a href="store-add.html" class="CLW-button"><img src="images/icons/icon-shop-white.png" alt="Home Icons"></a></div>
-					<div class="menubutton"><a href="about.html" class="CLW-button"><img src="images/icons/icon-question-white.png" alt="Home Icons"></a></div>
+					<div class="menubutton"><a href="index.html" class="CLW-button"><img src="images/icons/icon-house-white.png" alt="Home Button"></a></div>
+					<div class="menubutton"><a href="list.html" class="CLW-button"><img src="images/icons/icon-list-white.png" alt="Grocery List Button"></a></div>
+					<div class="menubutton"><a href="product-add.html" class="CLW-button"><img src="images/icons/icon-apple-white.png" alt="Add a product"></a></div>
+					<div class="menubutton"><a href="store-add.html" class="CLW-button"><img src="images/icons/icon-shop-white.png" alt="Edit Stores"></a></div>
+					<div class="menubutton"><a href="about.html" class="CLW-button"><img src="images/icons/icon-question-white.png" alt="About Grocery Mobile"></a></div>
 				</div>
 			</div>
 		</footer>

@@ -20,15 +20,15 @@
 
 <body>
 	<div class="CLW-container-main">
-		<header>
+		<header role="banner">
 			<div class="CLW-top">
-				<a href="index.html"><img src="images/grocery-mobile-logo-horz.png" alt="" class="mainlogo"></a>
+				<img src="images/grocery-mobile-logo-horz.png" alt="main logo" class="mainlogo">
 			</div>
 			<div id="personalize"></div>
 			<h1>Edit this product</h1>
 		</header>
 
-		<section class="add-a-product">
+		<section class="add-a-product" role="main">
 			<div class="add-a-prod-container">
 				<form action="#">
 					<div class="add-a-prod-top">
@@ -45,7 +45,7 @@
 							</select>
 						</div>
 					</div>
-					<h3>Price</h3>
+					<h3 class="addedit">Price</h3>
 					<div class="add-a-prod-pricing">
 						<div class="storeProductLogos" id="storeLogoProductAdd">
 						</div>
@@ -81,11 +81,12 @@
 
 						<label class="right-inline" for="unittype">Unit type</label>
 						<select name="unit" id="conversion-selector">
-							<option value="each">per each</option>
-							<option value="per lb">per lb</option>
-							<option value="per oz">per oz</option>
-							<option value="per liter">per Liter</option>
-							<option value="per gallon">per Gallon</option>
+							<option value="each">each</option>
+							<option value="lbs">lbs</option>
+							<option value="oz">oz</option>
+							<option value="Liter">Liter</option>
+							<option value="Quart">Quart</option>
+							<option value="Gallon">Gallon</option>
 						</select>
 					</div>
 
@@ -100,14 +101,14 @@
 
 		</section>
 
-		<footer>
+		<footer role="navigation">
 			<div class="CLW-bottom">
 				<div class="CLW-bar">
-					<div class="menubutton"><a href="index.html" class="CLW-button"><img src="images/icons/icon-house-white.png" alt="Home Icons"></a></div>
-					<div class="menubutton"><a href="list.html" class="CLW-button"><img src="images/icons/icon-list-white.png" alt="Home Icons"></a></div>
-					<div class="menubutton"><a href="product-add.html" class="CLW-button"><img src="images/icons/icon-apple-white.png" alt="Home Icons"></a></div>
-					<div class="menubutton"><a href="store-add.html" class="CLW-button"><img src="images/icons/icon-shop-white.png" alt="Home Icons"></a></div>
-					<div class="menubutton"><a href="about.html" class="CLW-button"><img src="images/icons/icon-question-white.png" alt="Home Icons"></a></div>
+					<div class="menubutton"><a href="index.html" class="CLW-button"><img src="images/icons/icon-house-white.png" alt="Home Button"></a></div>
+					<div class="menubutton"><a href="list.html" class="CLW-button"><img src="images/icons/icon-list-white.png" alt="Grocery List Button"></a></div>
+					<div class="menubutton"><a href="product-add.html" class="CLW-button"><img src="images/icons/icon-apple-white.png" alt="Add a product"></a></div>
+					<div class="menubutton"><a href="store-add.html" class="CLW-button"><img src="images/icons/icon-shop-white.png" alt="Edit Stores"></a></div>
+					<div class="menubutton"><a href="about.html" class="CLW-button"><img src="images/icons/icon-question-white.png" alt="About Grocery Mobile"></a></div>
 				</div>
 			</div>
 		</footer>
