@@ -76,12 +76,11 @@ $(function() {
   // delete item from database
   $('#deleteme').on('click', function(e) {
     e.preventDefault();
-    console.log(productID);
     $.ajax({
       type: 'DELETE',
       url: '/products/' + productID,
       success: function(){
-        console.log('yippee');
+        window.location = 'list.html';
       }
     });
   });

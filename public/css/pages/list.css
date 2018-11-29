@@ -102,13 +102,15 @@
 .add-prod-form-submit select {
   box-sizing: border-box;
   width: 80%;
-  padding: 10px 10px;
+  padding: 5px 5px;
   color: #333;
   border: 1px solid #ccc;
   border-radius: 4px;
   vertical-align: middle;
   font-family: 'Lato',
                    sans-serif;
+  height:40px;
+  font-size: 1.2em;
 }
 
 .add-prod-form-submit input[type=submit] {
@@ -124,42 +126,18 @@
 
 @media only screen and (max-width: 800px) {
   .add-prod-form-submit select {
-      box-sizing: border-box;
       width: 70%;
-      padding: 10px 10px;
-      color: #333;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      vertical-align: middle;
-      font-family: 'Lato',
- sans-serif;
   }
 }
 
 @media only screen and (max-width: 550px) {
   .add-prod-form-submit select {
-      box-sizing: border-box;
       width: 60%;
-      padding: 10px 10px;
-      color: #333;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      vertical-align: middle;
-      font-family: 'Lato',
- sans-serif;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .add-prod-form-submit select {
-      box-sizing: border-box;
       width: 55%;
-      padding: 10px 10px;
-      color: #333;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      vertical-align: middle;
-      font-family: 'Lato',
- sans-serif;
   }
 }

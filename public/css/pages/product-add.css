@@ -23,6 +23,26 @@ section.add-a-product {
   justify-content: center;
 }
 
+#price {
+  height:40px;
+  font-size: 1.2em;
+}
+
+#selectedUnit {
+  height:40px;
+  font-size: 1em;
+}
+
+#unitQty {
+  height:40px;
+  font-size: 1.2em;
+}
+
+#conversion-selector {
+  height:40px;
+  font-size: 1.2em;
+}
+
 .editlabel {
   display: inline-block;
   text-align: right;
@@ -181,7 +201,7 @@ section.unit-converter {
   font-size: .8em;
   margin-right: 3px;
   vertical-align: middle;
-  line-height: 1;
+  line-height: 2;
   font-size: 1.2em;
 }
 

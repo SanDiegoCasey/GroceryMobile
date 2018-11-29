@@ -161,6 +161,26 @@ section.add-a-product {
   margin: 5px;
 }
 
+#price {
+  height:40px;
+  font-size: 1.2em;
+}
+
+#unitQty {
+  height:40px;
+  font-size: 1.2em;
+}
+
+#conversion-selector {
+  height:40px;
+  font-size: 1.2em;
+}
+
+#selectedUnit {
+  height:40px;
+  font-size: 1em;
+}
+
 .computed-price {
   font-size: 2em;
   color: #006600;
@@ -190,7 +210,7 @@ section.unit-converter {
   font-size: .8em;
   margin-right: 3px;
   vertical-align: middle;
-  line-height: 1;
+  line-height: 2;
   font-size: 1.2em;
 }
 
