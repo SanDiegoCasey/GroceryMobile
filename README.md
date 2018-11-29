@@ -3,18 +3,24 @@
 http://www.grocerymobile.com
 
 Grocery Mobile is a shopping companion app that operates both as a shopping list but also a price comparison list so you can quickly add products to your list that you purchase frequently and compare the prices that you have entered into the app from each of the stores.  This is extremely helpful for people who shop frequently from a couple of different stores, and forget which is the cheapest for which items.
+
+## Screen Shots
+
 ![screenshot](http://www.grocerymobile.com/images/photos/screenshot-main.jpg)
 ![screenshot](http://www.grocerymobile.com/images/photos/screenshot-list.jpg)
 
 ## User instructions
 
-Grocery Companion makes it easy for you to keep track of the prices of your most commonly purchased items from your favorite stores!
+Grocery Companion makes it easy for you to keep track of the prices of your most commonly purchased
+ items from your favorite stores!
 
 Using the app
   Adding Stores
     Your first step will be choosing your 2 or 3 favorite stores that you frequent. Click on the green store button and choose your primary stores.
 
-    You can also go here at any time to make changes to your top 3 stores. If you would prefer to use a different store for a while in your top 3, you can switch it out however that columns pricing will remain the same, so you will need to update it with new data for each product.
+    You can also go here at any time to make changes to your top 3 stores. If you would prefer to use a
+     different store for a while in your top 3, you can switch it out however that columns pricing will
+      remain the same, so you will need to update it with new data for each product.
 
 Adding / Editing Products
     Adding and editing products and their current prices is the fun part! You can either do this at home with the weekly paper, or with a recent receipt or while you're at the store with Grocery Mobile on your phone. Simply click the Green Apple Icon at the bottom, or the "new" button from your list.
@@ -37,3 +43,4 @@ Your List
 * [Node.js](https://nodejs.org/en/) - Server Setup
 * [Express.js](https://expressjs.com/) - Node Server Framework
 * [MongoDB](https://www.mongodb.com/) - Used to create database
+* [jQuery](https://jquery.com/) - Used for layout
