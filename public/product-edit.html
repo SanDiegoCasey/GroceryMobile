@@ -32,7 +32,10 @@
 			<div class="add-a-prod-container">
 				<form action="#">
 					<div class="add-a-prod-top">
-						<div class="productname" id="editProdName"></div>
+						<div class="flexcontainer">
+							<div class="productname" id="editProdName"></div>
+							<div class="deleteme" id="deleteme">delete</div>
+						</div>
 						<div class="block-select">
 							<label class="editlabel">Units</label>
 							<select name="unit" id="selectedUnit">
@@ -51,13 +54,13 @@
 						</div>
 						<div class="storeAddPrices">
 							<div class="block-input-price">
-								<span class="currencyinput">$<input class="price-label" type="text" id="addProductPrice1"></span>
+								<span class="currencyinput">$<input class="price-label" type="text" id="addProductPrice1" maxlength="6"></span>
 							</div>
 							<div class="block-input-price">
-								<span class="currencyinput">$<input class="price-label" type="text" id="addProductPrice2"></span>
+								<span class="currencyinput">$<input class="price-label" type="text" id="addProductPrice2" maxlength="6"></span>
 							</div>
 							<div class="block-input-price">
-								<span class="currencyinput">$<input class="price-label" type="text" id="addProductPrice3"></span>
+								<span class="currencyinput">$<input class="price-label" type="text" id="addProductPrice3" maxlength="6"></span>
 							</div>
 						</div>
 					</div>

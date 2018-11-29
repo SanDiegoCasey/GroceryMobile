@@ -1,3 +1,14 @@
+.deleteme {
+  color:#920000;
+  text-decoration: underline;
+}
+
+.flexcontainer{
+  display:flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
 h3.addedit {
   margin-left:10px;
 }

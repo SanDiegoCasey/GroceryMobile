@@ -1,3 +1,26 @@
+#deletestorebutton {
+  text-decoration: underline;
+}
+
+.invisible{
+  visibility: hidden;
+  display:none;
+}
+
+.greatstores{
+  text-align: center;
+}
+
+#gotolist {
+  background-color: #920000;
+  color: white;
+  padding: 5px 5px;
+  margin: 0px 0;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+}
+
 .current-stores-row {
   display: flex;
   justify-content: space-around;

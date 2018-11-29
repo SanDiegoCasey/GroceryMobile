@@ -36,18 +36,7 @@ $(function() {
     }
   });
 
-  $.ajax({
-    type: 'GET',
-    url: '/products/' + productID,
-    success: function(product) {
-      console.log(productID);
-      $editProdName.append(`${product.name}`);
-      $addPrice1.val(product.prices[0].price);
-      $addPrice2.val(product.prices[1].price);
-      $addPrice3.val(product.prices[2].price);
-      $selectedUnit.val(product.size);
-    }
-  });
+
 
   $('#addItemButton').on('click', function(e) {
     e.preventDefault();
@@ -74,18 +63,39 @@ $(function() {
       type: 'PUT',
       url: '/products/' + productID,
       data: newProd,
-      success: function(newProd) {
-        // alert(`${newProd.name} Updated!`);
-        // console.log(newProd );
+      success: function(newProd){
         window.location = 'list.html';
-        //   $('#addProductName').reset();
-        //   $('#addProductPrice1').reset();
-        //   $('#addProductPrice2').reset();
-        //   $('#addProductPrice3').reset();
       }
     });
 
   });
+
+
+  $.ajax({
+    type: 'GET',
+    url: '/products/' + productID,
+    success: function(product) {
+      $editProdName.append(`${product.name}`);
+      $addPrice1.val(product.prices[0].price);
+      $addPrice2.val(product.prices[1].price);
+      $addPrice3.val(product.prices[2].price);
+      $selectedUnit.val(product.size);
+    }
+  });
+
+  $('#deleteme').on('click', function(e) {
+    e.preventDefault();
+    console.log(productID);
+    $.ajax({
+      type: 'DELETE',
+      url: '/products/' + productID,
+      success: function(){
+        console.log('yippee');
+      }
+    });
+  });
+
+
   // Calculator Section
   $('.submit-calc').click(function(e) {
     let selected = $('#conversion-selector option:selected').val();
@@ -128,13 +138,11 @@ $(function() {
       $('html, body').animate({
         scrollTop: $(document).height()
       }, 'slow');
-      // return false;
     } else if (selected === 'each') {
       document.getElementById('unit-result').innerHTML = `<span class="computed-price">$${perEaByEa}</span> per each`;
       $('html, body').animate({
         scrollTop: $(document).height()
       }, 'slow');
-      // return false;
     } else if (selected === 'Liter') {
       document.getElementById('unit-result').innerHTML = `<span class="computed-price">$${perLtByLt}</span> per liter<br>\
       <span class="computed-price">$${perQtByLt}</span> per Quart<br>\
@@ -142,7 +150,6 @@ $(function() {
       $('html, body').animate({
         scrollTop: $(document).height()
       }, 'slow');
-      // return false;
     } else if (selected === 'Quart') {
       document.getElementById('unit-result').innerHTML = `<span class="computed-price">$${perQtByQt}</span> per Quart<br>\
       <span class="computed-price">$${perGaByQt}</span> per Gallon<br>\
@@ -150,7 +157,6 @@ $(function() {
       $('html, body').animate({
         scrollTop: $(document).height()
       }, 'slow');
-      // return false;
     }else if (selected === 'Gallon') {
       document.getElementById('unit-result').innerHTML = `<span class="computed-price">$${perGaByGa}</span> per Gallon<br>\
         <span class="computed-price">$${perQtByGa}</span> per Quart<br>\
@@ -159,7 +165,6 @@ $(function() {
       $('html, body').animate({
         scrollTop: $(document).height()
       }, 'slow');
-      // return false;
     }
 
   });

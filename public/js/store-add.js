@@ -21,6 +21,13 @@ $(function() {
     url: '/stores/user/'+userId,
     success: function(stores) {
       let listStores = stores.filter( store => store.sort == 'list');
+      if(listStores.length > 2){
+        console.log('greater');
+        $('.invisible').css({
+          display: 'block',
+          visibility: 'visible'
+        });
+      }
       let userStores = stores;
       localStorage.setItem('storeCount', listStores.length);
       localStorage.setItem('activeStores', JSON.stringify(userStores));
@@ -58,6 +65,7 @@ $(function() {
           </div>
           <div class="fav-store-add">
             <button class="addStoreButton smallButton" id="previousStores" name="${store._id}" > add + </button>
+            <!--<div id="deletestorebutton">delete</div>-->
           </div>
         </div>
           `);
@@ -104,7 +112,9 @@ $(function() {
     });
   });
 
-  $(document).on('click', '#previousStores', function(){ // previousStores
+  // $('#previousStores').on('click', function(e) {
+  $(document).on('click', '#previousStores', function(e){
+    e.preventDefault();
     let id = $(this).attr('name');
     let listStores = localStorage.getItem('storeCount');
     console.log('testing here');
@@ -150,5 +160,23 @@ $(function() {
       }
 
     }
+  });
+
+  $(document).on('click', '#gotolist', function(e){
+    e.preventDefault();
+    window.location='list.html';
+  });
+
+  $(document).on('click', '#deletestorebutton', function(){ // previousStores
+    let id = $(this).attr('name');
+    console.log(id);
+    $.ajax({
+      url: '/stores/'+id,
+      type: 'DELETE',
+      success: function(){
+        console.log('should delete');
+      }
+      // success: location.reload()
+    });
   });
 });

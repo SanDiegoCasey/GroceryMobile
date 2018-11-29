@@ -38,20 +38,12 @@ router.get('/user/:id', (req, res, next) => {
     });
 });
 
-router.get('/:productID', (req, res, next) => {
-  StoredProduct
-    .findOne({
-      _id: req.params.productID
-    })
-    .then(product => {
-      res.status(201).json(product);
-    });
-});
+
 
 router.post('/user/:id', jsonParser, (req, res) => {
   const requiredFields = ['name', 'size', 'prices'];
   console.log(`from router ${req.body}`);
-  for (let i=0; i < requiredFields.length; i++) {
+  for (let i = 0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
       const message = `Missing \`${field}\` in request body`;
@@ -77,16 +69,22 @@ router.post('/user/:id', jsonParser, (req, res) => {
 
 });
 
-router.put('/add/:id', (req,res,next) =>{
+router.put('/add/:id', (req, res, next) => {
   // res.status(200).json(req.params.id)
 
   StoredProduct
-    .findOneAndUpdate({_id:req.params.id}, {$set:{sort:'bank'}})
-    .then(result =>{
+    .findOneAndUpdate({
+      _id: req.params.id
+    }, {
+      $set: {
+        sort: 'bank'
+      }
+    })
+    .then(result => {
       res.status(200).json(result);
 
     })
-    .catch(err=>{
+    .catch(err => {
       console.log(err);
       res.status(500).json({
         error: err
@@ -94,16 +92,21 @@ router.put('/add/:id', (req,res,next) =>{
     });
 });
 
-router.put('/remove/:id', (req,res,next) =>{
-  // res.status(200).json(req.params.id)
+router.put('/remove/:id', (req, res, next) => {
 
   StoredProduct
-    .findOneAndUpdate({_id:req.params.id}, {$set:{sort:'list'}})
-    .then(result =>{
+    .findOneAndUpdate({
+      _id: req.params.id
+    }, {
+      $set: {
+        sort: 'list'
+      }
+    })
+    .then(result => {
       res.status(200).json(result);
 
     })
-    .catch(err=>{
+    .catch(err => {
       console.log(err);
       res.status(500).json({
         error: err
@@ -111,11 +114,11 @@ router.put('/remove/:id', (req,res,next) =>{
     });
 });
 
-router.put('/:id', (req,res) => {
+router.put('/:id', (req, res) => {
 
   let pricesArray = [];
 
-  for (let i = 0; i < req.body.prices.length; i++){
+  for (let i = 0; i < req.body.prices.length; i++) {
     pricesArray.push(req.body.prices[i]);
   }
 
@@ -125,12 +128,37 @@ router.put('/:id', (req,res) => {
   };
 
   StoredProduct
-    .findOneAndUpdate({_id:req.params.id}, {$set:storeProduct})
+    .findOneAndUpdate({
+      _id: req.params.id
+    }, {
+      $set: storeProduct
+    })
     .then(result => {
       res.status(200).json(result);
 
     })
-    .catch(err=>{
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
+});
+
+router.get('/:productID', (req, res, next) => {
+  StoredProduct
+    .findOne({
+      _id: req.params.productID
+    })
+    .then(product => {
+      res.status(201).json(product);
+    });
+});
+
+router.delete('/:productID', (req, res) => {
+  StoredProduct
+    .deleteOne({ _id: req.params.productID}).then(data =>
+      res.status(204).end()).catch(err => {
       console.log(err);
       res.status(500).json({
         error: err
