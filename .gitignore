@@ -69,5 +69,6 @@ localDocs
 ## Private
 ##############
 
+README.md
 config.js
 .env

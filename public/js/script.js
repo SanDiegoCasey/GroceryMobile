@@ -4,6 +4,8 @@ $(function() {
 
   var userName = localStorage.getItem('userName');
 
+  $( document ).tooltip();
+
   function userHasLoggedIn() {
     const authToken = localStorage.getItem('token');
   }
