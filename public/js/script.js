@@ -4,39 +4,6 @@ $(function() {
 
   var userName = localStorage.getItem('userName');
 
-  $( document ).tooltip();
-
-  function userHasLoggedIn() {
-    const authToken = localStorage.getItem('token');
-  }
-
-  userHasLoggedIn();
-
-
-  const protectedPage = () => {
-    const authToken = localStorage.getItem('token');
-
-    fetch('/api/protected', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${authToken}`
-      }
-    })
-      .then(response => response.json())
-      .then(json => console.log(json))
-      .catch(error => console.log(error));
-  };
-
-  function handleProtectedPage(event) {
-    protectedPage();
-  }
-
-  $('.protected').on('click', function(event) {
-    event.preventDefault();
-    handleProtectedPage(event);
-  });
-
   var authTokenhas = localStorage.getItem('token');
 
   if(authTokenhas) {
@@ -44,8 +11,6 @@ $(function() {
   } else {
     $('#personalize').html('<span class="loginstatus"><a href="index.html">Login</a></span>');
   }
-
-
 
   function handleLogout(){
     localStorage.removeItem('token');
@@ -68,5 +33,5 @@ $(function() {
     event.preventDefault();
     handleLogout(event);
   });
-
+  
 });

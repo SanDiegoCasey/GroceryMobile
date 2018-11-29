@@ -8,15 +8,7 @@ $(function() {
     window.location = 'register.html';
   }
 
-  var $groceryList = $('#groceryList');
-  var $stores = $('#storesInList');
   var $addProducts = $('#storeLogoProductAdd');
-  var $products = $('#productsInList');
-  var $stores = $('#storesInList');
-
-  var $addProducts = $('#storeLogoProductAdd');
-  var $chooseStores = $('#currentStores');
-  var $availableStores = $('#availableStores');
   var $addProductName = $('#addProductName');
   var $addProductUnit = $('#addProductUnit');
   var $addPrice1 = $('#addProductPrice1');
@@ -59,21 +51,12 @@ $(function() {
 
     $.ajax({
       type: 'POST',
-      // url: '/products/user/'+userId,
       url: '/products/user/' + userId,
       data: newProd,
       success: function(newProd) {
-        // swal(`${newProd.name} Added!`);
-        console.log(newProd );
-        // setTimeout(function(){window.location = 'list.html';},1500);
         window.location = 'list.html';
-        //   $('#addProductName').reset();
-        //   $('#addProductPrice1').reset();
-        //   $('#addProductPrice2').reset();
-        //   $('#addProductPrice3').reset();
       }
     });
-
   });
 
 
@@ -152,6 +135,5 @@ $(function() {
       }, 'slow');
       // return false;
     }
-
   });
 });

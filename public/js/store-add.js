@@ -8,15 +8,24 @@ $(function() {
 
   if(!authTokenhas) {window.location='register.html';}
 
-  // var $chooseStores = $('#currentStores');
   var $chooseStores = $('#currentStores');
   var $availableStores = $('#availableStores');
   var $previousStores = $('#previousStores');
-  var $addStoresToList = $('.addStoreToList');
-  var $removeStoreFromList = $('.removeStoreFromList');
 
 
-  $.ajax({ // userStores List
+  // check if user has any stores and tell them to add if they don't
+  $.ajax({
+    type: 'GET',
+    url: '/stores/user/' + userId,
+    success: function(stores) {
+      if (stores.length < 1) {
+        swal('Hey! You\'re new here! You need to add 3 stores!');
+      }
+    }
+  });
+
+  // populate list of 3 stores
+  $.ajax({
     type: 'GET',
     url: '/stores/user/'+userId,
     success: function(stores) {
@@ -47,12 +56,11 @@ $(function() {
     }
   });
 
-  $.ajax({ // previousStores bank
+  // populate list of previous Stores
+  $.ajax({
     type: 'GET',
     url: '/stores/user/'+userId,
     success: function(stores) {
-      // let listStores = stores.filter( store => store.sort == 'bank');
-      // localStorage.setItem('storeCount', listStores.length);
       $.each(stores, function(i, store) {
         if (store.sort == 'bank'){
           $previousStores.append(`<div class="fav-store" >
@@ -73,7 +81,8 @@ $(function() {
     }
   });
 
-  $.ajax({ // availableStores
+  // populate list of all availableStores
+  $.ajax({
     type: 'GET',
     url: '/stores/',
     success: function(stores) {
@@ -96,12 +105,9 @@ $(function() {
     }
   });
 
-
-  $(document).on('click', '#chooseStr', function(){ // currentStores
-
+  // remove a store from currentStores
+  $(document).on('click', '#chooseStr', function(){
     let id = this.name;
-
-    console.log(id);
     $.ajax({
       url: '/stores/remove/'+id,
       type: 'PUT',
@@ -111,7 +117,7 @@ $(function() {
     });
   });
 
-  // $('#previousStores').on('click', function(e) {
+  // add a store from previous stores
   $(document).on('click', '#previousStores', function(e){
     e.preventDefault();
     let id = $(this).attr('name');
@@ -131,6 +137,7 @@ $(function() {
     }
   });
 
+  // add store from global bank
   $(document).on('click', '#availableStr', function(e){ // this is the ADD FROM BANK
     let userStores = localStorage.getItem('activeStores');
     e.preventDefault();
@@ -151,7 +158,6 @@ $(function() {
           url: '/stores/user/' + userId,
           data: newStore,
           success: function(newStore) {
-            // setTimeout(function(){swal(`${newStore.name} Added!`);},3000);
             console.log(newStore);
             location.reload();
           }
@@ -161,12 +167,14 @@ $(function() {
     }
   });
 
+  // go to list
   $(document).on('click', '#gotolist', function(e){
     e.preventDefault();
     window.location='list.html';
   });
 
-  $(document).on('click', '#deletestorebutton', function(){ // previousStores
+  // delete store from previous stores
+  $(document).on('click', '#deletestorebutton', function(){
     let id = $(this).attr('name');
     console.log(id);
     $.ajax({
@@ -175,7 +183,6 @@ $(function() {
       success: function(){
         console.log('should delete');
       }
-      // success: location.reload()
     });
   });
 });

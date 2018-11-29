@@ -10,20 +10,13 @@ $(function() {
   }
   var $addProducts = $('#storeLogoProductAdd');
   var $editProdName = $('#editProdName');
-  var $groceryList = $('#groceryList');
-  var $addProducts = $('#storeLogoProductAdd');
-  var $products = $('#productsInList');
-  var $stores = $('#storesInList');
-  var $chooseStores = $('#currentStores');
-  var $availableStores = $('#availableStores');
   var $addProductName = $('#addProductName');
-  var $addProductUnit = $('#addProductUnit');
   var $addPrice1 = $('#addProductPrice1');
   var $addPrice2 = $('#addProductPrice2');
   var $addPrice3 = $('#addProductPrice3');
   var $selectedUnit = $('#selectedUnit');
 
-
+  // get store logos
   $.ajax({
     type: 'GET',
     url: '/stores/user/' + userId,
@@ -37,7 +30,7 @@ $(function() {
   });
 
 
-
+  // update item with new changes
   $('#addItemButton').on('click', function(e) {
     e.preventDefault();
     var newProd = {
@@ -57,20 +50,17 @@ $(function() {
       ]
     };
 
-    console.log(newProd);
-
     $.ajax({
       type: 'PUT',
       url: '/products/' + productID,
       data: newProd,
-      success: function(newProd){
+      success: function(){
         window.location = 'list.html';
       }
     });
-
   });
 
-
+  // populate chosen item to edit
   $.ajax({
     type: 'GET',
     url: '/products/' + productID,
@@ -83,6 +73,7 @@ $(function() {
     }
   });
 
+  // delete item from database
   $('#deleteme').on('click', function(e) {
     e.preventDefault();
     console.log(productID);
@@ -94,7 +85,6 @@ $(function() {
       }
     });
   });
-
 
   // Calculator Section
   $('.submit-calc').click(function(e) {
@@ -166,7 +156,5 @@ $(function() {
         scrollTop: $(document).height()
       }, 'slow');
     }
-
   });
-
 });

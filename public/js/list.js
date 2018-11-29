@@ -7,25 +7,13 @@ $(function() {
   if (!authTokenhas) {
     window.location = 'register.html';
   }
-
   var $groceryList = $('#groceryList');
   var $stores = $('#storesInList');
-
   var $products = $('#productsInList');
-  var $stores = $('#storesInList');
-
-  var $addProducts = $('#storeLogoProductAdd');
-  var $chooseStores = $('#currentStores');
-  var $availableStores = $('#availableStores');
-  var $addProductName = $('#addProductName');
-  var $addProductUnit = $('#addProductUnit');
-  var $addPrice1 = $('#addProductPrice1');
-  var $addPrice2 = $('#addProductPrice2');
-  var $addPrice3 = $('#addProductPrice3');
 
 
 
-
+  // get user items that are not on the list to populate drop down
   $.ajax({
     type: 'GET',
     url: '/products/user/' + userId,
@@ -37,17 +25,17 @@ $(function() {
           );
         }
       });
-
     }
-
   });
 
-
+  // get 3 stores that user has chosen send to store page if not 3
   $.ajax({
     type: 'GET',
     url: '/stores/user/' + userId,
     success: function(stores) {
-      if(stores.length < 1){swal('You\'re new here! You need to add some stores!');setTimeout(function(){window.location = 'store-add.html';},3000);} else if (stores.length === 1){swal('ya only got one store');} else {
+      if (stores.length < 1) {
+        window.location = 'store-add.html';
+      } else {
         $.each(stores, function(i, store) {
           if (store.sort === 'list') {
             $stores.append(`<div class="storelogo">
@@ -59,6 +47,22 @@ $(function() {
     }
   });
 
+  // check to see if user has any products yet, prompt if they don't.
+  $.ajax({
+    type: 'GET',
+    url: '/products/user/' + userId,
+    success: function(products) {
+      if (products.length < 1) {
+        swal(`You need to add some products!
+
+          Click the NEW+ button to add your first product to your list.
+
+          If you remove a product from the list, it will go to your saved items drop down.`);
+      }
+    }
+  });
+
+  // Getting items to populate list
   $.ajax({
     type: 'GET',
     url: '/products/user/' + userId,
@@ -91,26 +95,26 @@ $(function() {
         }
       });
     },
-    error: function() {
-    }
+    error: function() {}
   });
 
-  $(document).on('click', '#editproduct', function() { // checkbox
+  // checkbox
+  $(document).on('click', '#editproduct', function() {
     let editable = $(this).attr('name');
     localStorage.setItem('editProduct', editable);
     window.location = 'product-edit.html';
   });
 
-  $(document).on('click', '#deleterow', function() { // checkbox
-
+  // gray out item using the checkbox
+  $(document).on('click', '#deleterow', function() {
     $(this).parent().parent().parent().siblings().toggleClass('checked');
     $(this).parent().parent().parent().siblings().children().toggleClass('checked');
     $(this).parent().parent().siblings().toggleClass('deleterow');
   });
 
+  // remove the row with the item from the list and put back into stored drop down
   $(document).on('click', '#removerow', function() { // checkbox
     let id = $(this).attr('name');
-    console.log(id);
     $(this).parent().parent().parent().siblings().toggleClass('checked');
     $(this).parent().parent().parent().siblings().children().toggleClass('checked');
     $.ajax({
@@ -123,6 +127,7 @@ $(function() {
     });
   });
 
+  // add items from drop down to list
   $(document).on('click', '#addFromBank', function() {
     let id = $('#groceryList').val();
     console.log(id);

@@ -2,10 +2,10 @@
 
 $(function() {
 
-  const registerUserSuccess = (user) => ({
-    type: 'REGISTER_USER_SUCCESS',
-    user
-  });
+  // const registerUserSuccess = (user) => ({
+  //   type: 'REGISTER_USER_SUCCESS',
+  //   user
+  // });
 
   const registerUser = (username, password) => {
     console.log(`register user working ${username} and ${password}`);
@@ -32,16 +32,8 @@ $(function() {
     registerUser(username, password);
   }
 
-
   $('#registerForm').on('submit', function(event) {
     event.preventDefault();
     handleSubmit(event);
   });
-
-
-
-
-
-
-
 });
