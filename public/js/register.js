@@ -21,9 +21,8 @@ $(function() {
     })
       .then(response => response.json())
       .then(swal(`${username} has been added`))
-      .then(console.log('something happens here'))
       .catch(error => console.log(error));
-    // window.location = 'index.html';
+    window.location = 'index.html';
   };
 
   function handleSubmit(event) {

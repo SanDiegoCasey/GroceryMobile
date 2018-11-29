@@ -52,6 +52,15 @@ $(function() {
 
   if(authTokenhas) {
     $('#personalizeindex').html(`<span class="loginstatusindex">Hi ${userName}! <a href="#" class="logoutindex">logout</a></span>`);
+    $('.indextogglein').css({
+      display: 'block',
+      visibility: 'visible'
+    });
+    $('.indextoggleout').css({
+      display: 'none',
+      visibility: 'hidden'
+    });
+    $('#welcomeback').text(`Hi ${userName}!`);
   }
 
   $('#loginForm').on('submit', function(event) {

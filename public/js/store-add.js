@@ -22,7 +22,6 @@ $(function() {
     success: function(stores) {
       let listStores = stores.filter( store => store.sort == 'list');
       if(listStores.length > 2){
-        console.log('greater');
         $('.invisible').css({
           display: 'block',
           visibility: 'visible'

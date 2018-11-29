@@ -56,7 +56,6 @@ $(function() {
       ]
     };
 
-    console.log(newProd);
 
     $.ajax({
       type: 'POST',

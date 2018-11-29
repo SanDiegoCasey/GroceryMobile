@@ -9,6 +9,25 @@
   color: #fff;
 }
 
+.indextogglein {
+display: none;
+visibility: hidden;
+}
+
+.indextoggleout {
+  display:block;
+  visibility: visible;
+}
+
+#welcomeback {
+font-size: 2em;
+font-family: 'Lato', sans-serif;
+font-weight: 800;
+color: #fff;
+-webkit-filter: drop-shadow(3px 3px 3px #494848);
+filter: drop-shadow(3px 3px 3px #494848);
+}
+
 #personalizeindex {
   font-size: 1em;
   text-align: right;

@@ -22,22 +22,26 @@
 	<div class="CLW-container-main">
 		<header role="banner">
 			<div class="CLW-top">
-				<img src="images/grocery-mobile-logo-horz.png" alt="main logo" class="mainlogo" >
+				<img src="images/grocery-mobile-logo-horz.png" alt="main logo" class="mainlogo">
 			</div>
 			<div id="personalize"></div>
 			<H1>My Grocery List</H1>
 		</header>
 
-		<section  role="main">
+		<section role="main">
+
 			<div class="add-prod-form-submit">
+
 				<div class="addproductselect">
 					<form action="#">
+						<label id="grocerylabel" for="Groceries">Saved</label>
 						<select name="Groceries" id="groceryList">
 						</select>
 						<input type="submit" id="addFromBank" value="ADD">
 					</form>
+					<button class="addstore" onclick="location.href='product-add.html';">NEW+</button>
 				</div>
-				<button class="addstore" onclick="location.href='product-add.html';">NEW+</button>
+
 			</div>
 		</section>
 
