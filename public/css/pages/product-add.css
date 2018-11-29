@@ -70,6 +70,8 @@ section.add-a-product {
   font-family: 'Lato', sans-serif;
   color: #333;
   vertical-align: middle;
+  height: 40px;
+  font-size:1.2em;
 }
 
 .block-select select {
