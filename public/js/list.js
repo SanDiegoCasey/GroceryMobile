@@ -33,6 +33,9 @@ $(function() {
     type: 'GET',
     url: '/stores/user/' + userId,
     success: function(stores) {
+      let listStores = stores.filter( store => store.sort == 'list');
+      if(listStores.length < 3){
+        swal('Hey! You need to add 3 stores! Click the Edit Stores button in the green bar below.');}
       if (stores.length < 1) {
         window.location = 'store-add.html';
       } else {
