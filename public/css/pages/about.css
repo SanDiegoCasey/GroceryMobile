@@ -3,7 +3,6 @@
 }
 
 .maindescription {
-  margin-bottom: 60px;
 }
 
 .instructions-button {
@@ -20,8 +19,8 @@
   width: 100%;
   max-width: 550px;
   margin: auto;
-  padding-top: 10px;
-  font-family: arial, sans-serif;
+  padding-bottom: 90px;
+  color:#5b5b5b;
 }
 
 .copyright {
